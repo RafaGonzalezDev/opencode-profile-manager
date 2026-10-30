@@ -1,0 +1,14 @@
+{
+  "name": "opencode-profile-manager",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "npm --prefix cli install",
+    "prestart": "npm --prefix cli --silent run build",
+    "build": "npm --prefix cli --silent run build",
+    "start": "node cli/dist/index.js",
+    "dev": "npm --prefix cli --silent run build && node cli/dist/index.js",
+    "setup": "npm run start",
+    "cli:install": "npm --prefix cli install"
+  }
+}
