@@ -1,0 +1,136 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      }
+    }
+  },
+  "tools": {
+    "context7*": false
+  },
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": "deny",
+    "webfetch": "deny",
+    "external_directory": "ask",
+    "doom_loop": "ask",
+    "task": {
+      "*": "deny"
+    },
+    "skill": {
+      "*": "deny"
+    },
+    "bash": {
+      "*": "allow",
+
+      "git push*": "deny",
+      "git clean*": "deny",
+
+      "npm run dev*": "deny",
+      "npm run start*": "deny",
+      "npm run serve*": "deny",
+      "npm run preview*": "deny",
+      "npm run watch*": "deny",
+      "pnpm run dev*": "deny",
+      "pnpm run start*": "deny",
+      "pnpm run serve*": "deny",
+      "pnpm run preview*": "deny",
+      "pnpm run watch*": "deny",
+      "yarn dev*": "deny",
+      "yarn start*": "deny",
+      "yarn serve*": "deny",
+      "yarn preview*": "deny",
+      "yarn watch*": "deny",
+      "bun run dev*": "deny",
+      "bun run start*": "deny",
+      "vite*": "deny",
+      "next dev*": "deny",
+      "next start*": "deny",
+      "ng serve*": "deny",
+      "webpack serve*": "deny",
+      "uvicorn*": "deny",
+      "flask run*": "deny",
+      "python manage.py runserver*": "deny",
+      "python -m http.server*": "deny",
+      "dotnet watch run*": "deny",
+      "mvn spring-boot:run*": "deny",
+      "./gradlew bootRun*": "deny",
+      "go run*": "deny",
+      "cargo run*": "deny",
+
+      "docker compose up*": "deny",
+      "docker-compose up*": "deny",
+      "docker run*": "deny",
+      "kubectl port-forward*": "deny",
+
+      "rm *": "deny",
+      "rmdir *": "deny",
+      "del *": "deny",
+      "dd *": "deny",
+      "mkfs*": "deny",
+      "format *": "deny",
+
+      "sudo *": "deny",
+      "su *": "deny",
+      "doas *": "deny"
+    }
+  },
+  "agent": {
+    "general": {
+      "disable": true
+    },
+    "explore": {
+      "disable": true
+    },
+    "build": {
+      "model": "github-copilot/REPLACE_WITH_ORCHESTRATOR_MODEL",
+      "reasoningEffort": "high",
+      "tools": {
+        "context7*": true
+      }
+    },
+    "plan": {
+      "model": "github-copilot/REPLACE_WITH_ORCHESTRATOR_MODEL",
+      "reasoningEffort": "high",
+      "tools": {
+        "context7*": true
+      }
+    },
+    "explorer": {
+      "model": "github-copilot/REPLACE_WITH_FAST_MODEL",
+      "reasoningEffort": "low",
+      "tools": {
+        "context7*": true
+      }
+    },
+    "worker": {
+      "model": "github-copilot/REPLACE_WITH_CODING_MODEL",
+      "reasoningEffort": "medium",
+      "tools": {
+        "context7*": true
+      }
+    },
+    "tester": {
+      "model": "github-copilot/REPLACE_WITH_CODING_MODEL",
+      "reasoningEffort": "medium"
+    },
+    "debugger": {
+      "model": "github-copilot/REPLACE_WITH_CODING_MODEL",
+      "reasoningEffort": "high"
+    },
+    "reviewer": {
+      "model": "github-copilot/REPLACE_WITH_REVIEW_MODEL",
+      "reasoningEffort": "high"
+    }
+  }
+}
