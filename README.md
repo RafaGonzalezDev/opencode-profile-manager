@@ -140,6 +140,20 @@ docs/                guides for maintaining profiles
 .env.example         keys referenced by the MCP servers
 ```
 
+## Built with
+
+The installer is a Node.js CLI written in TypeScript on top of:
+
+- [Ink](https://github.com/vadimdemedes/ink): React renderer for the
+  terminal UI
+- [React](https://react.dev): component model used by Ink
+- [ink-spinner](https://github.com/vadimdemedes/ink-spinner): progress
+  spinners
+- [execa](https://github.com/sindresorhus/execa): runs `opencode`, `npm`,
+  `brew` and `git` for environment checks and installs
+
+Tests use the built-in `node:test` runner; no test framework is required.
+
 ## Development
 
 ```bash
