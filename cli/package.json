@@ -1,0 +1,32 @@
+{
+  "name": "opencode-profile-manager",
+  "version": "1.0.0",
+  "description": "Interactive CLI for installing and switching OpenCode profiles",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "opencode-profile-manager": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.mjs",
+    "prestart": "npm run build --silent",
+    "start": "node dist/index.js",
+    "dev": "npm run build --silent && node dist/index.js",
+    "setup": "npm run start",
+    "test": "npm run build --silent && node --test --test-concurrency=1 test/**/*.test.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "execa": "^9.5.2",
+    "ink": "^6.0.0",
+    "ink-spinner": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.2"
+  }
+}
